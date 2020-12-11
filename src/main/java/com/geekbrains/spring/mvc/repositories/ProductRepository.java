@@ -27,6 +27,14 @@ public class ProductRepository {
         return Collections.unmodifiableList(products);
     }
 
+    public Product getProductById(Long id){
+        for (Product product : products) {
+            if (id == product.getId())
+                return product;
+        }
+        return null;
+    }
+
     public void save(Product product) {
         products.add(product);
     }

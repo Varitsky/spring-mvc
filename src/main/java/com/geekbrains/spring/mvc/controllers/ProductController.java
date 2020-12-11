@@ -30,6 +30,23 @@ public class ProductController {
         return "all_products";
     }
 
+
+
+//    @GetMapping("/one/{id}")
+//    public String getProductById(@PathVariable Long id) {
+//        productService.getProductById(id);
+//        return "one";
+//    }
+
+    @GetMapping("/one/{id}")
+    public String getProductById(Model model, @PathVariable Long id) {
+        model.addAttribute("frontProduct", productService.getProductById(id));
+        productService.getProductById(id);
+        return "one";
+    }
+
+
+
     @GetMapping("/remove/{id}")
     public String deleteProductById(@PathVariable Long id) {
         productService.deleteById(id);

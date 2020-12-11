@@ -30,6 +30,7 @@
             <td th:text="${b.title}"></td>
             <td th:text="${'C: ' + b.cost}"></td>
             <td><a class="btn btn-danger" th:href="@{'/products/remove/' + ${b.id}}">Удалить</a></td>
+            <td><a class="btn btn-info" th:href="@{'/products/one/' + ${b.id}}">Подробнее о товаре</a></td>
         </tr>
         </tbody>
     </table>
@@ -39,10 +40,10 @@
         <!-- GET http://localhost:8189/app/boxes/add?id=10&color=red&size=20 -->
         <label>id</label>
         <input type="number" name="id">
-        <label>color</label>
-        <input type="text" name="color">
-        <label>size</label>
-        <input type="number" name="size">
+        <label>titile</label>
+        <input type="text" name="title">
+        <label>cost</label>
+        <input type="number" name="cost">
         <button class="btn btn-primary" type="submit">Создать</button>
     </form>
 </div>

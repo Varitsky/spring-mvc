@@ -23,6 +23,11 @@ public class ProductService {
         return productRepository.getAllProducts();
     }
 
+    public Product getProductById(Long id){
+        return productRepository.getProductById(id);
+    }
+
+
     public void save(Product product) {
         productRepository.save(product);
     }
